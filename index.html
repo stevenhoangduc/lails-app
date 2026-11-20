@@ -4,53 +4,161 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="color-scheme" content="light dark">
+<meta name="description" content="Lails, a social app for nail technicians. Lails, ứng dụng mạng xã hội cho thợ nail.">
 <title>Lails</title>
 <style>
-:root{--bg:#fff;--fg:#222;--muted:#5f5f5f;--line:#d6d6d6;--accent:#b0306a;--note:#fdf1f6;--code:#f3f3f3}
-@media (prefers-color-scheme:dark){:root{--bg:#151515;--fg:#e6e6e6;--muted:#ababab;--line:#444;--accent:#f08ab8;--note:#2b1b23;--code:#2a2a2a}}
+:root{--bg:#FBF7F8;--surface:#fff;--fg:#212121;--muted:#616161;--line:#EADFE3;--accent:#B2184F;--onaccent:#fff;--soft:#FCE4EC;--lavender:#EEE8FA;--peach:#FDEBDD;--note:#fdf1f6}
+@media (prefers-color-scheme:dark){:root{--bg:#141012;--surface:#1F191C;--fg:#EDEDED;--muted:#B3B3B3;--line:#3A2E33;--accent:#F28DB0;--onaccent:#141012;--soft:#3D1F2B;--lavender:#2A2338;--peach:#33251C;--note:#2b1b23}}
+*{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
-body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;max-width:760px;margin:0 auto;padding:16px;font-size:17px;line-height:1.6;color:var(--fg);background:var(--bg);overflow-wrap:break-word}
-h1{font-size:1.7em;line-height:1.25;margin:.4em 0}
-h2{font-size:1.3em;margin-top:1.8em}
-h3{font-size:1.1em;margin-top:1.4em}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;max-width:960px;margin:0 auto;padding:0 16px 16px;font-size:17px;line-height:1.6;color:var(--fg);background:var(--bg);overflow-wrap:break-word}
 a{color:var(--accent)}
-code{background:var(--code);padding:1px 4px;border-radius:3px}
-li{margin:.3em 0}
-.lang{display:flex;gap:12px;flex-wrap:wrap;font-size:.95em;padding:8px 0;border-bottom:1px solid var(--line)}
-.draft{border:1px solid var(--accent);background:var(--note);border-radius:8px;padding:10px 12px;margin:12px 0}
-.muted{color:var(--muted)}
+h1{font-size:2em;line-height:1.2;margin:.2em 0 .3em}
+h2{font-size:1.4em;line-height:1.3;margin:1.8em 0 .6em}
+h3{font-size:1.05em;margin:0 0 .2em}
+p{margin:.5em 0}
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:12px 0;border-bottom:1px solid var(--line)}
+.brand{font-weight:800;font-size:1.3em;letter-spacing:.5px;color:var(--accent)}
+.lang{display:flex;gap:12px;flex-wrap:wrap;font-size:.95em}
 section{scroll-margin-top:12px}
+.hero{background:linear-gradient(160deg,var(--soft),var(--peach));border-radius:24px;padding:28px 20px;margin:20px 0 8px}
+.tagline{font-size:1.15em;font-weight:600;color:var(--accent);margin:0}
+.lead{font-size:1.05em;max-width:36em}
+.grid{display:grid;grid-template-columns:1fr;gap:12px;padding:0;margin:0;list-style:none}
+@media (min-width:600px){.grid{grid-template-columns:1fr 1fr}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px 16px;display:flex;gap:12px;align-items:flex-start}
+.card:nth-child(3n+1) .icon{background:var(--soft)}
+.card:nth-child(3n+2) .icon{background:var(--lavender)}
+.card:nth-child(3n) .icon{background:var(--peach)}
+.icon{flex:none;width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px}
+.card p{margin:0;color:var(--muted);font-size:.95em}
+.sub{font-weight:400;color:var(--muted)}
+.shots{display:flex;gap:12px;overflow-x:auto;padding:4px 2px 12px;scroll-snap-type:x mandatory}
+.phone{flex:none;width:150px;aspect-ratio:9/19.5;border:6px solid var(--fg);border-radius:26px;background:var(--surface);display:flex;align-items:center;justify-content:center;text-align:center;padding:12px;color:var(--muted);font-size:.85em;scroll-snap-align:start}
+.stores{display:flex;flex-wrap:wrap;gap:12px;margin:12px 0}
+.badge-slot{min-width:160px;min-height:52px;border:2px dashed var(--accent);border-radius:12px;display:flex;flex-direction:column;justify-content:center;padding:6px 14px;background:var(--surface)}
+.badge-slot b{font-size:1em}
+.badge-slot span{font-size:.85em;color:var(--muted)}
+.box{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px 16px}
+.links{padding-left:1.2em}
+.links li{margin:.3em 0}
 hr{border:0;border-top:1px solid var(--line);margin:2.5em 0}
+footer{border-top:1px solid var(--line);margin-top:2.5em;padding-top:16px;font-size:.9em;color:var(--muted)}
+footer nav{display:flex;flex-wrap:wrap;gap:6px 16px;margin-bottom:8px}
 </style>
 </head>
 <body>
+<header class="top">
+<span class="brand">Lails</span>
 <nav class="lang" aria-label="Language / Ngôn ngữ"><a href="#en" hreflang="en" lang="en">English</a><a href="#vi" hreflang="vi" lang="vi">Tiếng Việt</a></nav>
+</header>
 
+<main>
 <section id="en" lang="en">
-<h1>Lails</h1>
-<p>A social app for nail technicians, in English and Vietnamese.</p>
-<ul>
+<div class="hero">
+<p class="tagline">A playground for lails</p>
+<h1>Lails, the social app for nail technicians</h1>
+<p class="lead">Lails is a social app for nail technicians, in English and Vietnamese. Share your work, buy and sell, find a job or a room, and chat with nail techs near you. Lails is for adults 18 and older.</p>
+</div>
+
+<h2>What you can do on Lails</h2>
+<ul class="grid">
+<li class="card"><span class="icon" aria-hidden="true">📰</span><div><h3>Feed <span class="sub">· Bảng tin</span></h3><p>Share your nail work in photos and short videos, and like, comment on and follow other nail techs.</p></div></li>
+<li class="card"><span class="icon" aria-hidden="true">♻️</span><div><h3>Chợ chồm hổm <span class="sub">· Marketplace</span></h3><p>Buy and sell used nail products and more with nail techs near you.</p></div></li>
+<li class="card"><span class="icon" aria-hidden="true">💼</span><div><h3>Tìm ông bà nội <span class="sub">· Jobs</span></h3><p>Find nail jobs, or post an ad when you are hiring or looking for work.</p></div></li>
+<li class="card"><span class="icon" aria-hidden="true">🏠</span><div><h3>Mướn phòng <span class="sub">· Rooms for Rent</span></h3><p>Find or rent out a room near you.</p></div></li>
+<li class="card"><span class="icon" aria-hidden="true">💬</span><div><h3>Tám <span class="sub">· Messages</span></h3><p>Private messages with other members, to ask about a listing, an ad or just to chat.</p></div></li>
+<li class="card"><span class="icon" aria-hidden="true">💕</span><div><h3>Se duyên <span class="sub">· Singles</span></h3><p>Meet singles in the lails community. It is optional: only members who join can see Se duyên profiles and photos.</p></div></li>
+<li class="card"><span class="icon" aria-hidden="true">⭐</span><div><h3>Reviews <span class="sub">· Đánh giá</span></h3><p>After a deal you messaged about, rate the other member, so everyone knows who to trust.</p></div></li>
+</ul>
+
+<h2>Screenshots</h2>
+<div class="shots" role="list" aria-label="Screenshots, coming soon">
+<div class="phone" role="listitem" aria-label="Screenshot of the Feed, coming soon" data-placeholder="screenshot-feed">Feed screenshot coming soon</div>
+<div class="phone" role="listitem" aria-label="Screenshot of Chợ chồm hổm, coming soon" data-placeholder="screenshot-cho">Chợ chồm hổm screenshot coming soon</div>
+<div class="phone" role="listitem" aria-label="Screenshot of Tám, coming soon" data-placeholder="screenshot-tam">Tám screenshot coming soon</div>
+</div>
+
+<h2>Get the app</h2>
+<p>Lails is coming soon to the App Store and Google Play.</p>
+<!-- Store badge placeholders: swap each one for the official badge and store link once the app is live in that store. -->
+<div class="stores">
+<div class="badge-slot" data-placeholder="app-store-badge"><b>App Store</b><span>Coming soon</span></div>
+<div class="badge-slot" data-placeholder="google-play-badge"><b>Google Play</b><span>Coming soon</span></div>
+</div>
+
+<h2>Help and contact</h2>
+<div class="box">
+<p>Questions, ideas or problems? Email us at <a href="mailto:lailssupport@gmail.com">lailssupport@gmail.com</a>. Common questions are answered on the <a href="support.html">Support page</a>.</p>
+</div>
+<ul class="links">
+<li><a href="support.html">Support</a></li>
 <li><a href="privacy.html">Privacy policy</a></li>
 <li><a href="terms.html">Terms of service</a></li>
 <li><a href="community-rules.html">Community rules</a></li>
 <li><a href="delete-account.html">How to delete your account</a></li>
 <li><a href="child-safety.html">Child safety standards</a></li>
 </ul>
-<p>Contact: <a href="mailto:lailssupport@gmail.com">lailssupport@gmail.com</a></p>
 </section>
 
 <hr>
 
 <section id="vi" lang="vi">
-<h2>Lails</h2>
-<ul>
+<div class="hero">
+<p class="tagline">Sân chơi dành cho anh chị lails</p>
+<h2>Lails, ứng dụng mạng xã hội cho thợ nail</h2>
+<p class="lead">Lails là ứng dụng mạng xã hội dành cho thợ nail, có tiếng Việt và tiếng Anh. Khoe tác phẩm, mua bán, tìm việc hay tìm phòng, và tám chuyện với anh chị thợ nail gần bạn. Lails chỉ dành cho người từ 18 tuổi trở lên.</p>
+</div>
+
+<h2>Lails có gì?</h2>
+<ul class="grid">
+<li class="card"><span class="icon" aria-hidden="true">📰</span><div><h3>Bảng tin</h3><p>Khoe tác phẩm nail bằng hình và video ngắn, thả tim, bình luận và theo dõi anh chị thợ nail khác.</p></div></li>
+<li class="card"><span class="icon" aria-hidden="true">♻️</span><div><h3>Chợ chồm hổm <span class="sub">· Mua bán</span></h3><p>Mua bán đồ nail đã qua sử dụng và nhiều thứ khác với thợ nail gần bạn.</p></div></li>
+<li class="card"><span class="icon" aria-hidden="true">💼</span><div><h3>Tìm ông bà nội <span class="sub">· Việc làm</span></h3><p>Tìm việc nail, hoặc đăng tin khi tiệm cần thợ hay khi bạn đang tìm việc.</p></div></li>
+<li class="card"><span class="icon" aria-hidden="true">🏠</span><div><h3>Mướn phòng <span class="sub">· Thuê phòng</span></h3><p>Tìm hoặc cho thuê phòng gần bạn.</p></div></li>
+<li class="card"><span class="icon" aria-hidden="true">💬</span><div><h3>Tám <span class="sub">· Tin nhắn</span></h3><p>Nhắn tin riêng với các thành viên khác, để hỏi về món đồ, tin rao hay chỉ để tám chuyện.</p></div></li>
+<li class="card"><span class="icon" aria-hidden="true">💕</span><div><h3>Se duyên <span class="sub">· Người độc thân</span></h3><p>Làm quen với người độc thân trong cộng đồng lails. Không bắt buộc: chỉ thành viên tham gia mới xem được hồ sơ và ảnh Se duyên.</p></div></li>
+<li class="card"><span class="icon" aria-hidden="true">⭐</span><div><h3>Đánh giá</h3><p>Sau một giao dịch hai bạn đã nhắn tin, hãy đánh giá thành viên kia, để mọi người biết ai đáng tin.</p></div></li>
+</ul>
+
+<h2>Hình ảnh ứng dụng</h2>
+<div class="shots" role="list" aria-label="Hình ảnh ứng dụng, sắp có">
+<div class="phone" role="listitem" aria-label="Hình Bảng tin, sắp có" data-placeholder="screenshot-feed-vi">Hình Bảng tin sắp có</div>
+<div class="phone" role="listitem" aria-label="Hình Chợ chồm hổm, sắp có" data-placeholder="screenshot-cho-vi">Hình Chợ chồm hổm sắp có</div>
+<div class="phone" role="listitem" aria-label="Hình Tám, sắp có" data-placeholder="screenshot-tam-vi">Hình Tám sắp có</div>
+</div>
+
+<h2>Tải ứng dụng</h2>
+<p>Lails sắp có trên App Store và Google Play.</p>
+<div class="stores">
+<div class="badge-slot" data-placeholder="app-store-badge-vi"><b>App Store</b><span>Sắp có</span></div>
+<div class="badge-slot" data-placeholder="google-play-badge-vi"><b>Google Play</b><span>Sắp có</span></div>
+</div>
+
+<h2>Hỗ trợ và liên hệ</h2>
+<div class="box">
+<p>Có câu hỏi, ý kiến hay gặp sự cố? Email cho chúng tôi: <a href="mailto:lailssupport@gmail.com">lailssupport@gmail.com</a>. Các câu hỏi thường gặp có trên <a href="support.html#vi">trang Hỗ trợ</a>.</p>
+</div>
+<ul class="links">
+<li><a href="support.html#vi">Hỗ trợ</a></li>
 <li><a href="privacy.html#vi">Chính sách quyền riêng tư</a></li>
 <li><a href="terms.html#vi">Điều khoản dịch vụ</a></li>
 <li><a href="community-rules.html#vi">Quy tắc cộng đồng</a></li>
 <li><a href="delete-account.html#vi">Cách xóa tài khoản Lails</a></li>
 <li><a href="child-safety.html#vi">Tiêu chuẩn an toàn trẻ em</a></li>
 </ul>
-<p>Liên hệ: <a href="mailto:lailssupport@gmail.com">lailssupport@gmail.com</a></p>
 </section>
+</main>
+
+<footer>
+<nav aria-label="Lails pages / Các trang Lails">
+<a href="support.html">Support / Hỗ trợ</a>
+<a href="privacy.html">Privacy / Quyền riêng tư</a>
+<a href="terms.html">Terms / Điều khoản</a>
+<a href="community-rules.html">Community rules / Quy tắc cộng đồng</a>
+<a href="delete-account.html">Delete account / Xóa tài khoản</a>
+</nav>
+<p>© 2026 Lails LLC</p>
+</footer>
 </body>
 </html>
