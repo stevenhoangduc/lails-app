@@ -5,26 +5,20 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="color-scheme" content="light dark">
 <title>Lails Child Safety Standards</title>
-<style>
-:root{--bg:#fff;--fg:#222;--muted:#5f5f5f;--line:#d6d6d6;--accent:#b0306a;--note:#fdf1f6;--code:#f3f3f3}
-@media (prefers-color-scheme:dark){:root{--bg:#151515;--fg:#e6e6e6;--muted:#ababab;--line:#444;--accent:#f08ab8;--note:#2b1b23;--code:#2a2a2a}}
-html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
-body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;max-width:760px;margin:0 auto;padding:16px;font-size:17px;line-height:1.6;color:var(--fg);background:var(--bg);overflow-wrap:break-word}
-h1{font-size:1.7em;line-height:1.25;margin:.4em 0}
-h2{font-size:1.3em;margin-top:1.8em}
-h3{font-size:1.1em;margin-top:1.4em}
-a{color:var(--accent)}
-code{background:var(--code);padding:1px 4px;border-radius:3px}
-li{margin:.3em 0}
-.lang{display:flex;gap:12px;flex-wrap:wrap;font-size:.95em;padding:8px 0;border-bottom:1px solid var(--line)}
-.draft{border:1px solid var(--accent);background:var(--note);border-radius:8px;padding:10px 12px;margin:12px 0}
-.muted{color:var(--muted)}
-section{scroll-margin-top:12px}
-hr{border:0;border-top:1px solid var(--line);margin:2.5em 0}
-</style>
+<meta name="theme-color" content="#FBF7F8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#120C10" media="(prefers-color-scheme: dark)">
+<link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="legal">
+<header class="site-head">
+<div class="wrap head-row">
+<a class="brand" href="index.html">Lails</a>
 <nav class="lang" aria-label="Language / Ngôn ngữ"><a href="#en" hreflang="en" lang="en">English</a><a href="#vi" hreflang="vi" lang="vi">Tiếng Việt</a></nav>
+</div>
+</header>
+
+<main class="doc-top">
+<div class="doc">
 
 <section id="en" lang="en">
 <h1>Lails · Child safety standards</h1>
@@ -96,5 +90,26 @@ hr{border:0;border-top:1px solid var(--line);margin:2.5em 0}
 <h3>Liên hệ về an toàn trẻ em</h3>
 <p>Địa chỉ liên hệ về an toàn trẻ em, kể cả cho Google Play và cơ quan thực thi pháp luật: <a href="mailto:lailssupport@gmail.com">lailssupport@gmail.com</a>.</p>
 </section>
+</div>
+</main>
+
+<footer>
+<div class="wrap foot">
+<div>
+<a class="brand" href="index.html">Lails</a>
+<p class="foot-tag">A playground for lails · <span lang="vi">Sân chơi dành cho anh chị lails</span></p>
+</div>
+<nav aria-label="Lails pages / Các trang Lails">
+<a href="index.html">Home / Trang chủ</a>
+<a href="support.html">Support / Hỗ trợ</a>
+<a href="privacy.html">Privacy / Quyền riêng tư</a>
+<a href="terms.html">Terms / Điều khoản</a>
+<a href="community-rules.html">Community rules / Quy tắc cộng đồng</a>
+<a href="delete-account.html">Delete account / Xóa tài khoản</a>
+<a href="child-safety.html">Child safety / An toàn trẻ em</a>
+</nav>
+<p class="copy">© 2026 Lails LLC</p>
+</div>
+</footer>
 </body>
 </html>

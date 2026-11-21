@@ -6,35 +6,20 @@
 <meta name="color-scheme" content="light dark">
 <meta name="description" content="Lails support: how to contact us and answers to common questions. Hỗ trợ Lails.">
 <title>Lails Support</title>
-<style>
-:root{--bg:#FBF7F8;--surface:#fff;--fg:#212121;--muted:#616161;--line:#EADFE3;--accent:#B2184F;--soft:#FCE4EC}
-@media (prefers-color-scheme:dark){:root{--bg:#141012;--surface:#1F191C;--fg:#EDEDED;--muted:#B3B3B3;--line:#3A2E33;--accent:#F28DB0;--soft:#3D1F2B}}
-*{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
-body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;max-width:760px;margin:0 auto;padding:0 16px 16px;font-size:17px;line-height:1.6;color:var(--fg);background:var(--bg);overflow-wrap:break-word}
-a{color:var(--accent)}
-h1{font-size:1.7em;line-height:1.25;margin:.4em 0}
-h2{font-size:1.3em;margin-top:1.8em}
-h3{font-size:1.1em;margin-top:1.4em}
-li{margin:.3em 0}
-.top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:12px 0;border-bottom:1px solid var(--line)}
-.brand{font-weight:800;font-size:1.3em;letter-spacing:.5px;color:var(--accent);text-decoration:none}
-.lang{display:flex;gap:12px;flex-wrap:wrap;font-size:.95em}
-.box{background:var(--soft);border-radius:16px;padding:14px 16px;margin:12px 0}
-.muted{color:var(--muted)}
-section{scroll-margin-top:12px}
-hr{border:0;border-top:1px solid var(--line);margin:2.5em 0}
-footer{border-top:1px solid var(--line);margin-top:2.5em;padding-top:16px;font-size:.9em;color:var(--muted)}
-footer nav{display:flex;flex-wrap:wrap;gap:6px 16px;margin-bottom:8px}
-</style>
+<meta name="theme-color" content="#FBF7F8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#120C10" media="(prefers-color-scheme: dark)">
+<link rel="stylesheet" href="styles.css">
 </head>
-<body>
-<header class="top">
+<body class="switch">
+<header class="site-head">
+<div class="wrap head-row">
 <a class="brand" href="index.html">Lails</a>
 <nav class="lang" aria-label="Language / Ngôn ngữ"><a href="#en" hreflang="en" lang="en">English</a><a href="#vi" hreflang="vi" lang="vi">Tiếng Việt</a></nav>
+</div>
 </header>
 
-<main>
+<main class="doc-top">
+<div class="doc">
 <section id="en" lang="en">
 <h1>Lails support</h1>
 <p class="muted">Last updated 19 November 2026.</p>
@@ -51,7 +36,7 @@ footer nav{display:flex;flex-wrap:wrap;gap:6px 16px;margin-bottom:8px}
 <h3>Signing up</h3>
 <ul>
 <li>Lails is only for people 18 or older.</li>
-<li>New members can sign up with Google, or with Apple on an iPhone or iPad. (Email sign-up may be paused for a short time.)</li>
+<li>New members can sign up with email, with Google, or with Apple on an iPhone or iPad.</li>
 <li>If you signed up with email, we sent you a verification link. Open the email on your phone and tap the link. Can't find it? Check your spam or junk folder.</li>
 <li>Then a few short steps follow, including your date of birth and a profile picture.</li>
 </ul>
@@ -96,7 +81,7 @@ footer nav{display:flex;flex-wrap:wrap;gap:6px 16px;margin-bottom:8px}
 </ul>
 </section>
 
-<hr>
+<hr class="lang-divider">
 
 <section id="vi" lang="vi">
 <h2>Hỗ trợ Lails</h2>
@@ -112,7 +97,7 @@ footer nav{display:flex;flex-wrap:wrap;gap:6px 16px;margin-bottom:8px}
 <h3>Đăng ký</h3>
 <ul>
 <li>Lails chỉ dành cho người từ 18 tuổi trở lên.</li>
-<li>Thành viên mới có thể đăng ký bằng Google, hoặc bằng Apple trên iPhone hay iPad. (Đăng ký qua email có thể tạm ngưng trong thời gian ngắn.)</li>
+<li>Thành viên mới có thể đăng ký bằng email, bằng Google, hoặc bằng Apple trên iPhone hay iPad.</li>
 <li>Nếu tài khoản của bạn dùng email, chúng tôi đã gửi cho bạn một liên kết xác nhận. Hãy mở email trên điện thoại và nhấn vào liên kết. Không thấy email? Hãy kiểm tra thư mục spam hoặc thư rác.</li>
 <li>Sau đó có vài bước ngắn, trong đó có ngày sinh và ảnh đại diện.</li>
 </ul>
@@ -156,17 +141,26 @@ footer nav{display:flex;flex-wrap:wrap;gap:6px 16px;margin-bottom:8px}
 <li><a href="delete-account.html#vi">Cách xóa tài khoản Lails</a></li>
 </ul>
 </section>
+</div>
 </main>
 
 <footer>
+<div class="wrap foot">
+<div>
+<a class="brand" href="index.html">Lails</a>
+<p class="foot-tag">A playground for lails · <span lang="vi">Sân chơi dành cho anh chị lails</span></p>
+</div>
 <nav aria-label="Lails pages / Các trang Lails">
 <a href="index.html">Home / Trang chủ</a>
+<a href="support.html">Support / Hỗ trợ</a>
 <a href="privacy.html">Privacy / Quyền riêng tư</a>
 <a href="terms.html">Terms / Điều khoản</a>
 <a href="community-rules.html">Community rules / Quy tắc cộng đồng</a>
 <a href="delete-account.html">Delete account / Xóa tài khoản</a>
+<a href="child-safety.html">Child safety / An toàn trẻ em</a>
 </nav>
-<p>© 2026 Lails LLC</p>
+<p class="copy">© 2026 Lails LLC</p>
+</div>
 </footer>
 </body>
 </html>
