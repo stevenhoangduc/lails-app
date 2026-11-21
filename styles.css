@@ -188,6 +188,29 @@ p{margin:.6em 0;text-wrap:pretty}
 .next li::before{content:"";position:absolute;left:2px;top:.62em;width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 18%,transparent)}
 .company{margin:24px 0 0;text-align:center;font-size:.92rem;color:var(--muted)}
 
+/* ---------- Home: Safe and respectful (Task 285) ---------- */
+.safety-intro{max-width:36em;margin:14px 0 0;font-size:1.08rem;color:var(--muted)}
+.safe-grid{display:grid;gap:14px;list-style:none;margin:0;padding:0}
+@media (min-width:640px){.safe-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:980px){.safe-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.safe-card{display:flex;gap:16px;align-items:flex-start;padding:22px;border-radius:var(--radius);background:var(--surface);border:1px solid var(--line);box-shadow:0 1px 2px rgba(74,21,48,.06)}
+.safe-card .icon{width:48px;height:48px;font-size:22px;border-radius:14px}
+.safe-card:nth-child(3n+2) .icon{background:var(--tile-2)}
+.safe-card:nth-child(3n) .icon{background:var(--tile-3)}
+.safe-card h3{font-family:var(--serif);font-weight:600;font-size:1.2rem;margin:0 0 4px}
+.safe-card p{margin:0;color:var(--muted);font-size:.98rem}
+
+/* ---------- Home: Questions / FAQ (Task 285) ---------- */
+.faq-list{max-width:820px;display:grid;gap:10px}
+.qa{border-radius:20px;background:var(--surface);border:1px solid var(--line)}
+.qa[open]{border-color:color-mix(in srgb,var(--accent) 40%,var(--line))}
+.qa summary{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:56px;padding:10px 20px;cursor:pointer;list-style:none;font-weight:600;border-radius:20px}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"+";content:"+" / "";flex:none;display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:var(--tile-1);color:var(--accent);font-size:1.3rem;line-height:1}
+.qa[open] summary::after{content:"\2212";content:"\2212" / ""}
+.qa .answer{padding:0 20px 16px;color:var(--muted)}
+.qa .answer p{margin:0 0 .5em}
+
 .lang-divider{border:0;height:1px;margin:0;background:linear-gradient(90deg,transparent,var(--line),transparent)}
 
 /* ---------- Footer (every page) ---------- */
