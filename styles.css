@@ -66,6 +66,11 @@ p{margin:.6em 0;text-wrap:pretty}
   .switch:has(#vi:target) .lang-divider{display:none}
   .switch:not(:has(#vi:target)) .lang a[hreflang="en"],
   .switch:has(#vi:target) .lang a[hreflang="vi"]{background:var(--ink);color:var(--on-ink)}
+  /* Task 284: a link to an anchor inside the Vietnamese part (#about-vi) keeps that part shown. */
+  .switch:has(#vi :target) #vi{display:block}
+  .switch:has(#vi :target) #en{display:none}
+  .switch:has(#vi :target) .lang a[hreflang="en"]{background:none;color:var(--fg)}
+  .switch:has(#vi :target) .lang a[hreflang="vi"]{background:var(--ink);color:var(--on-ink)}
 }
 
 /* ---------- Home: hero ---------- */
@@ -159,6 +164,29 @@ p{margin:.6em 0;text-wrap:pretty}
 .links a{display:flex;align-items:center;justify-content:space-between;min-height:48px;color:var(--fg);text-decoration:none;font-weight:500}
 .links a::after{content:"→";color:var(--accent);transition:translate .3s}
 .links a:hover::after{translate:4px 0}
+
+/* ---------- Home: About Lails (Task 284) ---------- */
+.about{isolation:isolate;overflow-x:clip}
+.about-grid{display:grid;gap:clamp(32px,5vw,64px);align-items:center}
+@media (min-width:820px){.about-grid{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr)}}
+.portrait{position:relative;margin:0 auto;width:min(86%,380px);padding:8px;border-radius:36px;background:linear-gradient(150deg,color-mix(in srgb,var(--accent) 30%,var(--surface)),var(--surface) 55%,color-mix(in srgb,var(--a3) 60%,var(--surface)));border:1px solid var(--glass-line);box-shadow:var(--glow),var(--shadow);rotate:-1.5deg}
+.portrait::before{content:"";position:absolute;inset:6% -6% -4%;z-index:-1;border-radius:50%;background:radial-gradient(closest-side,color-mix(in srgb,var(--accent) 38%,transparent),transparent);filter:blur(32px);pointer-events:none}
+.portrait img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:28px;background:var(--tile-1)}
+.story{position:relative;max-width:36em}
+.story::before{content:"\201C";position:absolute;top:-.42em;left:-.06em;font-family:var(--serif);font-weight:600;font-size:clamp(5rem,4rem + 4vw,8rem);line-height:1;color:color-mix(in srgb,var(--accent) 28%,transparent);pointer-events:none}
+.story-text{position:relative;margin:0;padding-top:clamp(28px,4vw,44px);font-family:ui-serif,"New York",Georgia,"Times New Roman",serif;font-size:clamp(1.12rem,1rem + .5vw,1.32rem);line-height:1.7;color:var(--fg)}
+.story-text::first-line{font-weight:600}
+.signature{display:flex;align-items:center;gap:14px;margin:24px 0 0;font-family:var(--serif);font-weight:600;font-size:1.2rem;color:var(--accent)}
+.signature::before{content:"";flex:none;width:40px;height:2px;border-radius:2px;background:linear-gradient(90deg,var(--accent),var(--accent-2))}
+.about-cards{display:grid;gap:14px;margin-top:clamp(36px,5vw,56px)}
+@media (min-width:640px){.about-cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.about-card{padding:24px;border-radius:var(--radius);background:var(--glass);border:1px solid var(--glass-line);-webkit-backdrop-filter:blur(20px) saturate(150%);backdrop-filter:blur(20px) saturate(150%);box-shadow:inset 0 1px 0 var(--glass-hi),0 1px 2px rgba(74,21,48,.06)}
+.about-card h3{font-family:var(--serif);font-weight:600;font-size:1.35rem;margin:0 0 8px}
+.about-card p{margin:0;color:var(--muted)}
+.next{list-style:none;margin:0;padding:0;color:var(--muted)}
+.next li{position:relative;padding-left:22px;margin:.45em 0}
+.next li::before{content:"";position:absolute;left:2px;top:.62em;width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 18%,transparent)}
+.company{margin:24px 0 0;text-align:center;font-size:.92rem;color:var(--muted)}
 
 .lang-divider{border:0;height:1px;margin:0;background:linear-gradient(90deg,transparent,var(--line),transparent)}
 
